@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BEAD05F7BF09D16B6C745E8 /* Pods_Roebling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BC94DB2BC8F311BD4CA905 /* Pods_Roebling.framework */; };
+		DA1548D81D21BCB1006F3F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1548D71D21BCB1006F3F48 /* AppDelegate.swift */; };
+		DA1548DA1D21BCB1006F3F48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1548D91D21BCB1006F3F48 /* ViewController.swift */; };
+		DA1548DD1D21BCB1006F3F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1548DB1D21BCB1006F3F48 /* Main.storyboard */; };
+		DA1548DF1D21BCB1006F3F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1548DE1D21BCB1006F3F48 /* Assets.xcassets */; };
+		DA1548E21D21BCB1006F3F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1548E01D21BCB1006F3F48 /* LaunchScreen.storyboard */; };
+		DA1548EA1D21D5C1006F3F48 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1548E91D21D5C1006F3F48 /* GalleryViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20AE1D14AC317E3C91C42F27 /* Pods-Roebling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roebling.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roebling/Pods-Roebling.release.xcconfig"; sourceTree = "<group>"; };
+		7D34A7C1AB8E7AD02D850AFB /* Pods-Roebling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roebling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roebling/Pods-Roebling.debug.xcconfig"; sourceTree = "<group>"; };
+		B0BC94DB2BC8F311BD4CA905 /* Pods_Roebling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roebling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1548D41D21BCB1006F3F48 /* Roebling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roebling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1548D71D21BCB1006F3F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA1548D91D21BCB1006F3F48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA1548DC1D21BCB1006F3F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA1548DE1D21BCB1006F3F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA1548E11D21BCB1006F3F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA1548E31D21BCB1006F3F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA1548E91D21D5C1006F3F48 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA1548D11D21BCB1006F3F48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BEAD05F7BF09D16B6C745E8 /* Pods_Roebling.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A19CBA8AE920DC54D5E271FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D34A7C1AB8E7AD02D850AFB /* Pods-Roebling.debug.xcconfig */,
+				20AE1D14AC317E3C91C42F27 /* Pods-Roebling.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA1548CB1D21BCB1006F3F48 = {
+			isa = PBXGroup;
+			children = (
+				DA1548D61D21BCB1006F3F48 /* Roebling */,
+				DA1548D51D21BCB1006F3F48 /* Products */,
+				A19CBA8AE920DC54D5E271FC /* Pods */,
+				E0E5C4AB887D544E34D8CD50 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA1548D51D21BCB1006F3F48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA1548D41D21BCB1006F3F48 /* Roebling.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA1548D61D21BCB1006F3F48 /* Roebling */ = {
+			isa = PBXGroup;
+			children = (
+				DA1548D71D21BCB1006F3F48 /* AppDelegate.swift */,
+				DA1548E91D21D5C1006F3F48 /* GalleryViewController.swift */,
+				DA1548D91D21BCB1006F3F48 /* ViewController.swift */,
+				DA1548DB1D21BCB1006F3F48 /* Main.storyboard */,
+				DA1548DE1D21BCB1006F3F48 /* Assets.xcassets */,
+				DA1548E01D21BCB1006F3F48 /* LaunchScreen.storyboard */,
+				DA1548E31D21BCB1006F3F48 /* Info.plist */,
+			);
+			path = Roebling;
+			sourceTree = "<group>";
+		};
+		E0E5C4AB887D544E34D8CD50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0BC94DB2BC8F311BD4CA905 /* Pods_Roebling.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA1548D31D21BCB1006F3F48 /* Roebling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA1548E61D21BCB1006F3F48 /* Build configuration list for PBXNativeTarget "Roebling" */;
+			buildPhases = (
+				C9E8A37172F6734D4AD76467 /* 📦 Check Pods Manifest.lock */,
+				DA1548D01D21BCB1006F3F48 /* Sources */,
+				DA1548D11D21BCB1006F3F48 /* Frameworks */,
+				DA1548D21D21BCB1006F3F48 /* Resources */,
+				87279FC862BC21420D7FB559 /* 📦 Embed Pods Frameworks */,
+				AD08BC3C5991E32BE701CE5A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Roebling;
+			productName = Roebling;
+			productReference = DA1548D41D21BCB1006F3F48 /* Roebling.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA1548CC1D21BCB1006F3F48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Mapbox;
+				TargetAttributes = {
+					DA1548D31D21BCB1006F3F48 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = DA1548CF1D21BCB1006F3F48 /* Build configuration list for PBXProject "Roebling" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA1548CB1D21BCB1006F3F48;
+			productRefGroup = DA1548D51D21BCB1006F3F48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA1548D31D21BCB1006F3F48 /* Roebling */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA1548D21D21BCB1006F3F48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1548E21D21BCB1006F3F48 /* LaunchScreen.storyboard in Resources */,
+				DA1548DF1D21BCB1006F3F48 /* Assets.xcassets in Resources */,
+				DA1548DD1D21BCB1006F3F48 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87279FC862BC21420D7FB559 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Roebling/Pods-Roebling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD08BC3C5991E32BE701CE5A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Roebling/Pods-Roebling-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9E8A37172F6734D4AD76467 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA1548D01D21BCB1006F3F48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1548EA1D21D5C1006F3F48 /* GalleryViewController.swift in Sources */,
+				DA1548DA1D21BCB1006F3F48 /* ViewController.swift in Sources */,
+				DA1548D81D21BCB1006F3F48 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA1548DB1D21BCB1006F3F48 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA1548DC1D21BCB1006F3F48 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA1548E01D21BCB1006F3F48 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA1548E11D21BCB1006F3F48 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA1548E41D21BCB1006F3F48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA1548E51D21BCB1006F3F48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA1548E71D21BCB1006F3F48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D34A7C1AB8E7AD02D850AFB /* Pods-Roebling.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Roebling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.Roebling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA1548E81D21BCB1006F3F48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20AE1D14AC317E3C91C42F27 /* Pods-Roebling.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Roebling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.Roebling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA1548CF1D21BCB1006F3F48 /* Build configuration list for PBXProject "Roebling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA1548E41D21BCB1006F3F48 /* Debug */,
+				DA1548E51D21BCB1006F3F48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA1548E61D21BCB1006F3F48 /* Build configuration list for PBXNativeTarget "Roebling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA1548E71D21BCB1006F3F48 /* Debug */,
+				DA1548E81D21BCB1006F3F48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA1548CC1D21BCB1006F3F48 /* Project object */;
+}
