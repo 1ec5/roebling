@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Map-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Map" id="BYZ-38-t0r" customClass="ViewController" customModule="Roebling" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,6 +33,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="C7Z-2y-sr8"/>
                                     <outletCollection property="gestureRecognizers" destination="69k-tE-q9K" appends="YES" id="ski-AI-ine"/>
                                 </connections>
                             </view>

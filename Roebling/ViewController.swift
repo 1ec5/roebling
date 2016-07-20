@@ -153,5 +153,19 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             break
         }
     }
+    
+    // MARK: MGLMapViewDelegate methods
+    
+    func mapView(mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
+        return 0.8
+    }
+    
+    func mapView(mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat {
+        return 10
+    }
+    
+    func mapView(mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor {
+        return UIColor(red: 0.4776530861854553, green: 0.2292086482048035, blue: 0.9591622352600098, alpha: 1)
+    }
 }
 
