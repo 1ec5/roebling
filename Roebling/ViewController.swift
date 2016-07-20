@@ -38,6 +38,8 @@ let layers = Set(arrayLiteral:
 class ViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var mapView: MGLMapView!
     
+    var osmTask: NSURLSessionTask?
+    var wikidataTask: NSURLSessionTask?
     var imageURLs: [NSURL] = []
     
     /**
@@ -67,68 +69,78 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         }
         
         // Get images of related features.
-        guard let wikidataIdentifier = tagsForOSMElement(element)?["wikidata"] where wikidataIdentifier.hasPrefix("Q") else {
-            return
-        }
-        let wikidataQuery = "SELECT ?pic WHERE { wd:\(wikidataIdentifier) wdt:P84 ?architect . ?item wdt:P84 ?architect . ?item wdt:P18 ?pic . }"
-        imageURLs = resultsForWikidataQuery(wikidataQuery) ?? []
-        
-        // Show a gallery of the images.
-        performSegueWithIdentifier("ShowGallery", sender: self)
-    }
-    
-    /**
-     Returns the tags on the given OpenStreetMap element using the Overpass API.
-     */
-    func tagsForOSMElement(element: OSMElement) -> [String: String]? {
-        let osmURL = NSURL(string: "https://overpass-api.de/api/interpreter?data=[out:json];\(element);out;")!
-        guard let osmData = NSData(contentsOfURL: osmURL) else {
-            return nil
-        }
-        
-        let overpassResults: [String: AnyObject]
-        do {
-            overpassResults = try NSJSONSerialization.JSONObjectWithData(osmData, options: []) as! [String : AnyObject]
-        } catch {
-            return nil
-        }
-        
-        guard let element = (overpassResults["elements"] as? [AnyObject])?.first else {
-            return nil
-        }
-        
-        return element["tags"] as? [String: String]
-    }
-    
-    /**
-     Returns results from executing the given query in the Wikidata Query Service.
-     */
-    func resultsForWikidataQuery(query: String) -> [NSURL]? {
-        let escapedWikidataQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        let wikidataQueryURL = NSURL(string: "https://query.wikidata.org/bigdata/namespace/wdq/sparql?format=json&query=\(escapedWikidataQuery)")!
-        guard let wikidataQueryData = NSData(contentsOfURL: wikidataQueryURL) else {
-            return nil
-        }
-        
-        let wikidataQueryResponse: [String: AnyObject]
-        do {
-            wikidataQueryResponse = try NSJSONSerialization.JSONObjectWithData(wikidataQueryData, options: []) as! [String : AnyObject]
-        } catch {
-            return nil
-        }
-        
-        guard let wikidataQueryResults = wikidataQueryResponse["results"] as? [String: [[String: [String: String]]]],
-            bindings = wikidataQueryResults["bindings"] else {
-            return nil
-        }
-        
-        return bindings.flatMap { $0["pic"]?["value"] }.flatMap {
-            let components = NSURLComponents(string: $0)
-            if components?.scheme == "http" {
-                components?.scheme = "https"
+        getTagsForOSMElement(element) { (tags) in
+            guard let wikidataIdentifier = tags["wikidata"] where wikidataIdentifier.hasPrefix("Q") else {
+                return
             }
-            return components?.URL!
+            let wikidataQuery = "SELECT ?pic WHERE { wd:\(wikidataIdentifier) wdt:P84 ?architect . ?item wdt:P84 ?architect . ?item wdt:P18 ?pic . }"
+            self.getImageURLsForWikidataQuery(wikidataQuery, completionHandler: { (imageURLs) in
+                self.imageURLs = imageURLs
+                
+                // Show a gallery of the images.
+                self.performSegueWithIdentifier("ShowGallery", sender: self)
+            })
         }
+    }
+    
+    /**
+     Fetches the tags on the given OpenStreetMap element using the Overpass API, calling the completion handler with any results.
+     */
+    func getTagsForOSMElement(element: OSMElement, completionHandler: (tags: [String: String]) -> Void) {
+        let url = NSURL(string: "https://overpass-api.de/api/interpreter?data=[out:json];\(element);out;")!
+        osmTask = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            
+            let overpassResults: [String: AnyObject]
+            do {
+                overpassResults = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String : AnyObject]
+            } catch {
+                return
+            }
+            
+            guard let element = (overpassResults["elements"] as? [AnyObject])?.first, tags = element["tags"] as? [String: String] else {
+                return
+            }
+            
+            completionHandler(tags: tags)
+        }
+        osmTask!.resume()
+    }
+    
+    /**
+     Executes the given query in the Wikidata Query Service, calling the completion handler with any resulting image URLs.
+     */
+    func getImageURLsForWikidataQuery(query: String, completionHandler: (imageURLs: [NSURL]) -> Void) {
+        let escapedQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let url = NSURL(string: "https://query.wikidata.org/bigdata/namespace/wdq/sparql?format=json&query=\(escapedQuery)")!
+        wikidataTask = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            
+            let apiResponse: [String: AnyObject]
+            do {
+                apiResponse = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String : AnyObject]
+            } catch {
+                return
+            }
+            
+            guard let results = apiResponse["results"] as? [String: [[String: [String: String]]]], bindings = results["bindings"] else {
+                return
+            }
+            
+            let imageURLs: [NSURL] = bindings.flatMap { $0["pic"]?["value"] }.flatMap {
+                let components = NSURLComponents(string: $0)
+                if components?.scheme == "http" {
+                    components?.scheme = "https"
+                }
+                return components?.URL!
+            }
+            completionHandler(imageURLs: imageURLs)
+        }
+        wikidataTask!.resume()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
