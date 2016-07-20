@@ -51,12 +51,20 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         
         // Query the map for visible features at the pressed location.
         let features = mapView.visibleFeatures(at: gesture.locationInView(mapView), styleLayerIdentifiers: layers)
-        guard let feature = features.filter({ $0.identifier != nil }).first, element = OSMElement(feature: feature) else {
+        guard let feature = features.filter({ $0.identifier != nil }).first else {
             return
         }
         
         // Visualize the feature.
         mapView.addAnnotation(feature)
+        
+        performSelector(#selector(showFeaturesRelatedToFeature(_:)), withObject: feature, afterDelay: 0.3)
+    }
+    
+    func showFeaturesRelatedToFeature(feature: MGLFeature) {
+        guard let element = OSMElement(feature: feature) else {
+            return
+        }
         
         // Get images of related features.
         guard let wikidataIdentifier = tagsForOSMElement(element)?["wikidata"] where wikidataIdentifier.hasPrefix("Q") else {
