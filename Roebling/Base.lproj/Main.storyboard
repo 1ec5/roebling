@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" title="Map" prompt="Long press a bridge." id="DQi-yo-npl"/>
                     <connections>
                         <outlet property="mapView" destination="KMg-Rk-iqi" id="QIL-vP-V7y"/>
-                        <segue destination="Xc3-ZL-bt6" kind="show" identifier="ShowGallery" action="showDetailViewController:sender:" id="BkR-hi-SdX"/>
+                        <segue destination="Xc3-ZL-bt6" kind="show" identifier="ShowGallery" id="7Qq-Dv-Yxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="1148" y="337"/>
         </scene>
-        <!--Gallery-->
+        <!--Also by This Architect-->
         <scene sceneID="bNf-gk-zFM">
             <objects>
-                <collectionViewController title="Gallery" modalPresentationStyle="currentContext" id="Xc3-ZL-bt6" customClass="GalleryViewController" customModule="Roebling" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Also by This Architect" modalPresentationStyle="currentContext" id="Xc3-ZL-bt6" customClass="GalleryViewController" customModule="Roebling" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QYS-I4-0ku">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,11 +90,10 @@
                             <outlet property="delegate" destination="Xc3-ZL-bt6" id="9cZ-ih-ST1"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Also by This Architect" id="6Jl-5W-xDe"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmO-eO-M5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="337"/>
+            <point key="canvasLocation" x="1919" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jLa-NZ-hyr">

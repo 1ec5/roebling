@@ -40,6 +40,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     
     var osmTask: NSURLSessionTask?
     var wikidataTask: NSURLSessionTask?
+    var architectName: String?
     var imageURLs: [NSURL] = []
     
     /**
@@ -73,13 +74,17 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             guard let wikidataIdentifier = tags["wikidata"] where wikidataIdentifier.hasPrefix("Q") else {
                 return
             }
-            let wikidataQuery = "SELECT ?pic WHERE { wd:\(wikidataIdentifier) wdt:P84 ?architect . ?item wdt:P84 ?architect . ?item wdt:P18 ?pic . }"
-            self.getImageURLsForWikidataQuery(wikidataQuery, completionHandler: { (imageURLs) in
+            let languages = (NSLocale.preferredLanguages().flatMap {
+                $0.componentsSeparatedByString("-").first
+            } + ["en"]).joinWithSeparator(",")
+            let wikidataQuery = "SELECT ?pic ?architectLabel WHERE { wd:\(wikidataIdentifier) wdt:P84 ?architect . ?item wdt:P84 ?architect . ?item wdt:P18 ?pic . SERVICE wikibase:label { bd:serviceParam wikibase:language \"\(languages)\". } }"
+            self.getImageURLsForWikidataQuery(wikidataQuery) { (architectName, imageURLs) in
+                self.architectName = architectName
                 self.imageURLs = imageURLs
                 
                 // Show a gallery of the images.
                 self.performSegueWithIdentifier("ShowGallery", sender: self)
-            })
+            }
         }
     }
     
@@ -104,7 +109,9 @@ class ViewController: UIViewController, MGLMapViewDelegate {
                 return
             }
             
-            completionHandler(tags: tags)
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler(tags: tags)
+            }
         }
         osmTask!.resume()
     }
@@ -112,7 +119,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     /**
      Executes the given query in the Wikidata Query Service, calling the completion handler with any resulting image URLs.
      */
-    func getImageURLsForWikidataQuery(query: String, completionHandler: (imageURLs: [NSURL]) -> Void) {
+    func getImageURLsForWikidataQuery(query: String, completionHandler: (architectName: String?, imageURLs: [NSURL]) -> Void) {
         let escapedQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         let url = NSURL(string: "https://query.wikidata.org/bigdata/namespace/wdq/sparql?format=json&query=\(escapedQuery)")!
         wikidataTask = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
@@ -131,6 +138,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
                 return
             }
             
+            let architectName = bindings.first?["architectLabel"]?["value"]
             let imageURLs: [NSURL] = bindings.flatMap { $0["pic"]?["value"] }.flatMap {
                 let components = NSURLComponents(string: $0)
                 if components?.scheme == "http" {
@@ -138,7 +146,9 @@ class ViewController: UIViewController, MGLMapViewDelegate {
                 }
                 return components?.URL!
             }
-            completionHandler(imageURLs: imageURLs)
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler(architectName: architectName, imageURLs: imageURLs)
+            }
         }
         wikidataTask!.resume()
     }
@@ -147,6 +157,9 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         switch segue.identifier ?? "" {
         case "ShowGallery":
             if let controller = segue.destinationViewController as? GalleryViewController {
+                if let architectName = architectName {
+                    controller.title = architectName
+                }
                 controller.imageURLs = imageURLs
             }
         default:
