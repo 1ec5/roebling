@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BEAD05F7BF09D16B6C745E8 /* Pods_Roebling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BC94DB2BC8F311BD4CA905 /* Pods_Roebling.framework */; };
+		0A70BD84814DBC1058E789AF /* Pods_Roebling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A0C84A418A51200CBDFC71 /* Pods_Roebling.framework */; };
 		DA1548D81D21BCB1006F3F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1548D71D21BCB1006F3F48 /* AppDelegate.swift */; };
 		DA1548DA1D21BCB1006F3F48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1548D91D21BCB1006F3F48 /* ViewController.swift */; };
 		DA1548DD1D21BCB1006F3F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1548DB1D21BCB1006F3F48 /* Main.storyboard */; };
 		DA1548DF1D21BCB1006F3F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1548DE1D21BCB1006F3F48 /* Assets.xcassets */; };
 		DA1548E21D21BCB1006F3F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1548E01D21BCB1006F3F48 /* LaunchScreen.storyboard */; };
 		DA1548EA1D21D5C1006F3F48 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1548E91D21D5C1006F3F48 /* GalleryViewController.swift */; };
+		DA56A9261D3F37C700745BC0 /* OSMElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56A9251D3F37C700745BC0 /* OSMElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13A0C84A418A51200CBDFC71 /* Pods_Roebling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roebling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AE1D14AC317E3C91C42F27 /* Pods-Roebling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roebling.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roebling/Pods-Roebling.release.xcconfig"; sourceTree = "<group>"; };
 		7D34A7C1AB8E7AD02D850AFB /* Pods-Roebling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roebling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roebling/Pods-Roebling.debug.xcconfig"; sourceTree = "<group>"; };
-		B0BC94DB2BC8F311BD4CA905 /* Pods_Roebling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roebling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1548D41D21BCB1006F3F48 /* Roebling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roebling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1548D71D21BCB1006F3F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA1548D91D21BCB1006F3F48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +29,7 @@
 		DA1548E11D21BCB1006F3F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1548E31D21BCB1006F3F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA1548E91D21D5C1006F3F48 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		DA56A9251D3F37C700745BC0 /* OSMElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BEAD05F7BF09D16B6C745E8 /* Pods_Roebling.framework in Frameworks */,
+				0A70BD84814DBC1058E789AF /* Pods_Roebling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,7 @@
 			children = (
 				DA1548D71D21BCB1006F3F48 /* AppDelegate.swift */,
 				DA1548E91D21D5C1006F3F48 /* GalleryViewController.swift */,
+				DA56A9251D3F37C700745BC0 /* OSMElement.swift */,
 				DA1548D91D21BCB1006F3F48 /* ViewController.swift */,
 				DA1548DB1D21BCB1006F3F48 /* Main.storyboard */,
 				DA1548DE1D21BCB1006F3F48 /* Assets.xcassets */,
@@ -86,7 +89,7 @@
 		E0E5C4AB887D544E34D8CD50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B0BC94DB2BC8F311BD4CA905 /* Pods_Roebling.framework */,
+				13A0C84A418A51200CBDFC71 /* Pods_Roebling.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,12 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA1548E61D21BCB1006F3F48 /* Build configuration list for PBXNativeTarget "Roebling" */;
 			buildPhases = (
-				C9E8A37172F6734D4AD76467 /* 📦 Check Pods Manifest.lock */,
+				C9E8A37172F6734D4AD76467 /* [CP] Check Pods Manifest.lock */,
 				DA1548D01D21BCB1006F3F48 /* Sources */,
 				DA1548D11D21BCB1006F3F48 /* Frameworks */,
 				DA1548D21D21BCB1006F3F48 /* Resources */,
-				87279FC862BC21420D7FB559 /* 📦 Embed Pods Frameworks */,
-				AD08BC3C5991E32BE701CE5A /* 📦 Copy Pods Resources */,
+				87279FC862BC21420D7FB559 /* [CP] Embed Pods Frameworks */,
+				AD08BC3C5991E32BE701CE5A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,14 +164,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		87279FC862BC21420D7FB559 /* 📦 Embed Pods Frameworks */ = {
+		87279FC862BC21420D7FB559 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,14 +179,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Roebling/Pods-Roebling-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD08BC3C5991E32BE701CE5A /* 📦 Copy Pods Resources */ = {
+		AD08BC3C5991E32BE701CE5A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,14 +194,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Roebling/Pods-Roebling-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C9E8A37172F6734D4AD76467 /* 📦 Check Pods Manifest.lock */ = {
+		C9E8A37172F6734D4AD76467 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA56A9261D3F37C700745BC0 /* OSMElement.swift in Sources */,
 				DA1548EA1D21D5C1006F3F48 /* GalleryViewController.swift in Sources */,
 				DA1548DA1D21BCB1006F3F48 /* ViewController.swift in Sources */,
 				DA1548D81D21BCB1006F3F48 /* AppDelegate.swift in Sources */,
